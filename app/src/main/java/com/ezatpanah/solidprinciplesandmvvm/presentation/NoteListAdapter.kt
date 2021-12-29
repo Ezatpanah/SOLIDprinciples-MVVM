@@ -46,6 +46,7 @@ class NoteListAdapter(var notes: ArrayList<NoteModel> , val action: ListAction) 
         private val noteTitle = itemView.findViewById<TextView>(R.id.title)
         private val noteContent = view.findViewById<TextView>(R.id.content)
         private val noteDate = view.findViewById<TextView>(R.id.date)
+        private val noteWords = view.findViewById<TextView>(R.id.wordcount)
 
         @SuppressLint("SetTextI18n", "SimpleDateFormat")
         fun bind(noteModel: NoteModel) {
@@ -60,6 +61,7 @@ class NoteListAdapter(var notes: ArrayList<NoteModel> , val action: ListAction) 
                 action.onClick(noteModel.id)
             }
 
+            noteWords.text="Words : ${noteModel.wordCount}"
 
 
         }
